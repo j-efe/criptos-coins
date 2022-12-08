@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import specificCriptos from "../../services/criptos/specific-criptos";
+import Modal from "../../components/Modal";
+import SpecificCriptos from "../../services/criptos/specific-criptos";
 import CriptoResults from "../../types/CriptoResults";
 
 import { Container, ContainerCriptos, CriptoInfos } from "./styles";
 
 export default function Main() {
   const [criptoCoins, setCriptoCoins] = useState<CriptoResults[]>([]);
+  const [specificCoin, setSpecificCoin] = useState<CriptoResults>();
 
   useEffect(() => {
     (async function () {
-      const teste = await specificCriptos();
-      if (!teste.error) {
-        setCriptoCoins(teste.message);
+      const coins = await SpecificCriptos();
+      if (!coins.error) {
+        setCriptoCoins(coins.message);
       } else {
-        setCriptoCoins(teste.message);
+        setCriptoCoins(coins.message);
       }
       console.log(criptoCoins);
     })();
@@ -23,20 +25,24 @@ export default function Main() {
 
   return (
     <>
+      {specificCoin && <Modal {...specificCoin} />}
+
       <Container>
         <Header />
         <ContainerCriptos>
           <div className="banner-text">
             <p>
-              Explore entre as melhores <a className="banner-text-cripto">Criptomoedas</a> , como :
-              Bitcoin, Ethereum e Cardano
+              Explore dentre as melhores <a className="banner-text-cripto">Criptomoedas</a> do
+              mercado , como : Bitcoin, Ethereum e Cardano
             </p>
           </div>
           <CriptoInfos>
             {criptoCoins.map((coin) => (
-              <div className="cripto-details" key={coin.id}>
+              <div onClick={() => setSpecificCoin(coin)} className="cripto-details" key={coin.id}>
                 <img src={coin.image} alt="coinImage" />
                 <p>{coin.name}</p>
+                <p className="coin-value">R$ {coin.current_price}</p>
+                <p className="current-price-text">(Valor atual)</p>
               </div>
             ))}
           </CriptoInfos>
