@@ -3,5 +3,4 @@ export default interface CriptoResults {
   image: string,
   name: string,
   current_price: number,
-
 }
