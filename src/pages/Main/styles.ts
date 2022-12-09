@@ -22,11 +22,11 @@ justify-content: space-evenly;
 
 margin-top: 2rem;
 border-radius: 3rem;
-background-color:  rgb(225,228,232);
+background:  rgb(225,228,232);
 
 .banner-text {
   display: flex;
-  width: 40rem;
+  width: 45rem;
   padding: 1rem;
   
   p{
@@ -40,7 +40,7 @@ background-color:  rgb(225,228,232);
 }
 `
 export const CriptoInfos = styled.div`
-width: 45rem;
+width: 50rem;
 height: 40rem;
 
 display: flex;
@@ -55,8 +55,8 @@ img {
 }
 
 .cripto-details {
-  width: 13rem;
-  padding: 1.5rem;
+  width: 15rem;
+  padding: 1rem;
   border-radius: 1.5rem;
 
   display: flex;
@@ -69,6 +69,20 @@ img {
 
   p {
     font-weight: 800;
+  }
+
+  .coin-value {
+    font-size: 2rem;
+  }
+
+  .current-price-text{
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.05);
   }
 }
 
