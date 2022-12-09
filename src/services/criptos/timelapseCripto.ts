@@ -1,7 +1,6 @@
 import api from "../api";
 
 export default async (id: string, date: string) => {
-  console.log(date);
 
   try {
     const response = await api.get(`https://api.coingecko.com/api/v3/coins/${id}/history?date=${date}&localization=false`);

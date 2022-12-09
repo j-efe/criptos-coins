@@ -1,9 +1,9 @@
+import ArrowLeft from "@/assets/arrow-left.svg";
+import { UserContext } from "@/contexts/userContext";
+import CriptoResults from "@/interfaces/CriptoResults";
+import timelapseCripto from "@/services/criptos/timelapseCripto";
 import { useContext } from "react";
-import timelapseCripto from "../../services/criptos/timelapseCripto";
-import CriptoResults from "../../types/CriptoResults";
 import { Background, Card } from "./styles";
-import ArrowLeft from "../../assets/arrow-left.svg";
-import { UserContext } from "../../contexts/userContext";
 
 export default function Modal({ id, name, image, current_price }: CriptoResults) {
   const { chosenDate, setChosenDate, coinAtDay, setCoinAtDay, openModalCoin, setOpenModalCoin } =

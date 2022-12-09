@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useState } from "react";
-import CriptoResults from "../types/CriptoResults";
+import CriptoResults from "@/interfaces/CriptoResults";
 
 type UserContextProps = {
   children: ReactNode;

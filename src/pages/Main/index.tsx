@@ -1,10 +1,10 @@
 import { useEffect, useContext } from "react";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Modal from "../../components/Modal";
-import { UserContext } from "../../contexts/userContext";
-import SpecificCriptos from "../../services/criptos/specific-criptos";
-import CriptoResults from "../../types/CriptoResults";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Modal from "@/components/Modal";
+import { UserContext } from "@/contexts/userContext";
+import SpecificCriptos from "@/services/criptos/specific-criptos";
+import CriptoResults from "@/interfaces/CriptoResults";
 
 import { Container, ContainerCriptos, CriptoInfos } from "./styles";
 

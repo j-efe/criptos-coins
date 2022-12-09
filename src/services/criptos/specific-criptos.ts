@@ -1,4 +1,4 @@
-import CriptoResults from "../../types/CriptoResults";
+import CriptoResults from "@/interfaces/CriptoResults";
 import api from "../api";
 
 export default async () => {
