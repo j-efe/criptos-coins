@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import Logo from "../../assets/iceberg-icon.svg";
+import Logo from "@/assets/iceberg-icon.svg";
 
 export default function Footer() {
   return (

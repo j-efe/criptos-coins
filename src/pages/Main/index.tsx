@@ -1,15 +1,22 @@
-import { useEffect, useState } from "react";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import Modal from "../../components/Modal";
-import SpecificCriptos from "../../services/criptos/specific-criptos";
-import CriptoResults from "../../types/CriptoResults";
+import { useEffect, useContext } from "react";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Modal from "@/components/Modal";
+import { UserContext } from "@/contexts/userContext";
+import SpecificCriptos from "@/services/criptos/specific-criptos";
+import CriptoResults from "@/interfaces/CriptoResults";
 
 import { Container, ContainerCriptos, CriptoInfos } from "./styles";
 
 export default function Main() {
-  const [criptoCoins, setCriptoCoins] = useState<CriptoResults[]>([]);
-  const [specificCoin, setSpecificCoin] = useState<CriptoResults>();
+  const {
+    criptoCoins,
+    setCriptoCoins,
+    specificCoin,
+    setSpecificCoin,
+    openModalCoin,
+    setOpenModalCoin,
+  } = useContext(UserContext);
 
   useEffect(() => {
     (async function () {
@@ -19,14 +26,17 @@ export default function Main() {
       } else {
         setCriptoCoins(coins.message);
       }
-      console.log(criptoCoins);
     })();
   }, []);
 
+  function handleOpenModal({ id, name, image, current_price }: CriptoResults) {
+    setSpecificCoin({ id, name, image, current_price });
+    setOpenModalCoin(!openModalCoin);
+  }
+
   return (
     <>
-      {specificCoin && <Modal {...specificCoin} />}
-
+      {openModalCoin && <Modal {...specificCoin} />}
       <Container>
         <Header />
         <ContainerCriptos>
@@ -38,7 +48,7 @@ export default function Main() {
           </div>
           <CriptoInfos>
             {criptoCoins.map((coin) => (
-              <div onClick={() => setSpecificCoin(coin)} className="cripto-details" key={coin.id}>
+              <div onClick={() => handleOpenModal(coin)} className="cripto-details" key={coin.id}>
                 <img src={coin.image} alt="coinImage" />
                 <p>{coin.name}</p>
                 <p className="coin-value">R$ {coin.current_price}</p>

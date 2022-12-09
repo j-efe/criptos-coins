@@ -1,11 +1,13 @@
-import { useState } from "react";
-import timelapseCripto from "../../services/criptos/timelapseCripto";
-import CriptoResults from "../../types/CriptoResults";
+import ArrowLeft from "@/assets/arrow-left.svg";
+import { UserContext } from "@/contexts/userContext";
+import CriptoResults from "@/interfaces/CriptoResults";
+import timelapseCripto from "@/services/criptos/timelapseCripto";
+import { useContext } from "react";
 import { Background, Card } from "./styles";
 
 export default function Modal({ id, name, image, current_price }: CriptoResults) {
-  const [chosenDate, setChosenDate] = useState<string>("");
-  const [coinAtDay, setCoinAtDay] = useState<string>("");
+  const { chosenDate, setChosenDate, coinAtDay, setCoinAtDay, openModalCoin, setOpenModalCoin } =
+    useContext(UserContext);
 
   function handleChosenDate(date: string) {
     const year = date.slice(0, 4);
@@ -27,10 +29,16 @@ export default function Modal({ id, name, image, current_price }: CriptoResults)
     }
   }
 
+  function handleClosemodal() {
+    setOpenModalCoin(!openModalCoin);
+    setChosenDate("");
+    setCoinAtDay("");
+  }
   return (
     <Background>
       <Card>
         <div className="internal-container">
+          <img onClick={handleClosemodal} className="arrow-exit" src={ArrowLeft} alt="ArrowLeft" />
           <img src={image} alt="cripto-image" />
           <p>{name}</p>
 

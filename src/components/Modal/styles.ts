@@ -24,6 +24,7 @@ export const Card = styled.div`
   padding: 2.5rem ;
 
   .internal-container{
+    position: relative;
     width: 100%;
     height: 100%;
     padding: 1rem;
@@ -45,6 +46,19 @@ export const Card = styled.div`
     p {
       font-size: 2rem;
       font-weight: 600;
+    }
+  }
+
+  .arrow-exit {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: 2rem;
+    left: 1rem;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
     }
   }
 
