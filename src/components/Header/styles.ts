@@ -25,6 +25,8 @@ export const Container = styled.header`
       color: rgb(11,189,200);
 
     }
+
+    
   }
 
   .header-infos {

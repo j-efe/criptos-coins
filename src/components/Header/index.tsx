@@ -9,12 +9,12 @@ export default function Header() {
         <p>IceCoin</p>
       </div>
 
-      <div className="header-infos">
+      {/* <div className="header-infos">
         <p>Home</p>
         <p>Sobre</p>
         <p>Serviços</p>
         <p>Contato</p>
-      </div>
+      </div> */}
     </Container>
   );
 }

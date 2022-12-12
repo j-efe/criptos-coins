@@ -54,7 +54,7 @@ export default function Modal({ id, name, image, current_price }: CriptoResults)
                 <input type="date" onChange={(e) => handleChosenDate(e.target.value)} />
                 <button type="submit">Consultar</button>
                 <div>
-                  <p className="cripto-prices__title">Valor neste dia:</p>
+                  <p className="cripto-prices__title">Valor no dia consultado:</p>
                   <p className="cripto-prices__informedValue">
                     {coinAtDay === "erro"
                       ? "Informe uma data válida"
