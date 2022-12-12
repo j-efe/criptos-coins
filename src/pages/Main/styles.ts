@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const ContainerCriptos = styled.main`
 min-width: 100%;
 min-height: 100%;
-margin-top: 2rem;
+margin-top: 6rem;
 border-radius: 2rem;
 background:  rgb(225,228,232);
 
@@ -57,13 +57,18 @@ align-items: center;
 `
 export const CriptoInfos = styled.div`
 width: 45rem;
+height: 70%;
 padding: 0.5rem;
+gap: 1rem;
 
 display: flex;
 align-items: center;
 justify-content: center;
 flex-wrap: wrap;
-gap: 1rem;
+
+white-space: nowrap;
+overflow-y: scroll;
+text-overflow: ellipsis;
 
 
 img {
