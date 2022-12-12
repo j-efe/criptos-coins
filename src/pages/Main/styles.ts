@@ -56,8 +56,8 @@ align-items: center;
 }
 `
 export const CriptoInfos = styled.div`
-width: 40rem;
-height: 40rem;
+width: 45rem;
+padding: 0.5rem;
 
 display: flex;
 align-items: center;
@@ -72,6 +72,7 @@ img {
 
 .cripto-details {
   width: 14rem;
+
   padding: 1rem;
   border-radius: 1.5rem;
 
