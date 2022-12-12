@@ -37,8 +37,8 @@ export default function Main() {
   return (
     <>
       {openModalCoin && <Modal {...specificCoin} />}
+      <Header />
       <Container>
-        <Header />
         <ContainerCriptos>
           <div className="banner-text">
             <p>
@@ -57,8 +57,8 @@ export default function Main() {
             ))}
           </CriptoInfos>
         </ContainerCriptos>
-        <Footer />
       </Container>
+      <Footer />
     </>
   );
 }
