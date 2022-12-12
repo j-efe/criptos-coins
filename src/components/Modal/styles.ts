@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Background = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@ export const Card = styled.div`
   height: 50rem;
   background: #ffffff;
   border-radius: 4.2rem;
-  padding: 2.5rem ;
+  padding: 1rem ;
 
   .internal-container{
     position: relative;
@@ -34,8 +34,7 @@ export const Card = styled.div`
     align-items: center;
     
     gap: 1rem;
-    border-radius: 1.5rem;
-
+    border-radius: 4rem;
 
     background:  rgb(225,228,232);
 
@@ -65,12 +64,10 @@ export const Card = styled.div`
   .cripto-prices {
     width:100%;
     height: 100%;
-    padding: 2rem;
+    padding: 0.5rem;
 
     display: flex;
     gap: 1rem;
-
-
   }
   
   .cripto-prices__currently, .cripto-prices__consult {
@@ -82,6 +79,7 @@ export const Card = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
   
   .cripto-prices__currently {
@@ -92,7 +90,7 @@ export const Card = styled.div`
     }
     
     h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       text-decoration: underline 0.3rem  rgb(11,189,200);
     }
   }

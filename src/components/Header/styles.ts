@@ -5,10 +5,14 @@ export const Container = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  position: fixed;
+  top: 0;
+
   width: 100%;
-  height: 4.8rem;
+  height: 7rem;
   padding: 3rem 6rem ;
-  
+  background: #FFF;
+
   img {
     width: 4rem;
   }
@@ -25,6 +29,8 @@ export const Container = styled.header`
       color: rgb(11,189,200);
 
     }
+
+    
   }
 
   .header-infos {
