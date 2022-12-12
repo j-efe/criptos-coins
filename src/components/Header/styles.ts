@@ -14,7 +14,8 @@ export const Container = styled.header`
   background: #FFF;
 
   img {
-    width: 4rem;
+    width: 3rem;
+    
   }
 
   .header-logo {
@@ -28,27 +29,6 @@ export const Container = styled.header`
       font-weight: 800;
       color: rgb(11,189,200);
 
-    }
-
-    
-  }
-
-  .header-infos {
-    width: 50rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    p{
-      cursor: pointer;
-      font-size: 2rem;
-      font-weight: 600;
-
-      &:hover {
-        text-decoration: underline 0.3rem;
-        text-decoration-color: rgb(11,189,200);
-        
-      }
     }
   }
 `
